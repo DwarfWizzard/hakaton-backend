@@ -2,7 +2,6 @@ package domain
 
 type Media struct {
 	Id       uint64            `gorm:"primaryKey;column:id"`
-	ParentId uint64            `gorm:"type:bigint;column:parent_id"`
 	TypeId   uint16             `gorm:"column:type_id"`
 	Type     *MediaContentType `gorm:"foreignKey:type_id;references:id"`
 	Content  string            `gorm:"type:text"`

@@ -7,6 +7,8 @@ type Lecture struct {
 	Type        *LectureType `gorm:"foreignKey:type_id;references:id"`
 	Title       string       `gorm:"type:varchar(60);column:title"`
 	Description string       `gorm:"type:text;colum:title"`
+
+	Media []*Media `gorm:"many2many:lecture2media"`
 }
 
 func (Lecture) TableName() string {
